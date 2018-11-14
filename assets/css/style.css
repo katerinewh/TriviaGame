@@ -1,5 +1,6 @@
 body{
     background-image: url("../images/background.jpg");
+    opacity: 50;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1600px 1600px;
@@ -8,11 +9,111 @@ body{
     font-family: 'Rancho', cursive;
     text-align: center;
     font-size: 80px;
-    color: ivory;
+    color: black;
  }
  p{
-    font-family: 'Rancho', cursive;
+    margin: -75px 0 10px;
+    font-family: 'Kavoon', cursive;
     text-align: center;
-    font-size: 50px;
-    color: ivory; 
+    font-size: 39px;
+    color:black; 
  }
+
+ .answerchoice {
+	border: 1px solid black;
+  border-radius: 5%;
+	width: 40%;
+	color: black;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 20px;
+  background-color: white;
+ }
+
+    #answerblock {
+    text-align: center;
+    }
+    #questionblock {
+        text-align: center;
+        font-weight: bold;
+      }
+      
+    #reset {
+        visibility: visible;
+      }
+      
+      .wrapper {
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid #403fd3;
+        height: 500px;
+        width: 60%;
+        text-align: center;
+      }
+      
+      .btn {
+        position: relative;
+        bottom: -150px;
+      }
+      
+  
+     /* Width at 900px and below */
+     @media screen and (max-width: 900px) {
+        body {
+          background-color: #333;
+        }
+      
+        .wrapper {
+          /* Box-model */
+          width: 100%;
+          padding: 20px;
+        }
+      
+        #main-content,
+        #sidebar {
+          width: 100%;
+        }
+      
+        #sidebar {
+          margin-top: 40px;
+        }
+      @media screen and (max-width: 600px) {
+        body {
+          background-color: #333;
+        }
+      
+        .wrapper {
+          /* Box-model */
+          width: 100%;
+          padding: 20px;
+        }
+      
+        #main-content,
+        #sidebar {
+          width: 100%;
+        }
+      
+        #sidebar {
+          margin-top: 40px;
+        }
+     @media screen and (max-width: 300px) {
+            body {
+              background-color: #333;
+            }
+          
+            .wrapper {
+              /* Box-model */
+              width: 100%;
+              padding: 20px;
+            }
+          
+            #main-content,
+            #sidebar {
+              width: 100%;
+            }
+          
+            #sidebar {
+              margin-top: 40px;
+            }
+        }
+  

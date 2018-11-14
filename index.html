@@ -3,101 +3,37 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Trivia</title>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kavoon" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
-
+    
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </head>
 
 <body>
     <div id="game">
        
         <h1> Movie Trivia Night</h1>
-        <br> <br>
+      <br><br><br>
         <p> Are you a film buff? Test your knowledge with these movie trivia questions! </p>
         
-        <div id="score" class="scoreboard"></div>
-        <div id="timer" class="scoreboard"></div>
-
-        <section id="question">
-            <div class="sectionBG"></div>
-            <div id="qText"></div>
-        </section>
-
-        <section id="choices">
-            <div class="sectionBG"></div>
-            <ol>
-                <li class="answer" data-choice=0></li>
-                <li class="answer" data-choice=1></li>
-                <li class="answer" data-choice=2></li>
-                <li class="answer" data-choice=3></li>
-            </ol>
-            <div id="result"></div>
-        </section>
-        <script type="text/javascript" src="assets/javascript/questions-library.js"></script>
-        <script type="text/javascript" src="assets/javascript/app.js"></script>
-
+        <div class="wrapper">	
+                <div id= "timeleft"></div>
+              <div id= "questionblock"></div>
+              <div id= "answerblock"></div>
+              <button class ="btn btn-success" id ="start">Start Game</button><br>
+              <button class="btn btn-success" id="reset">Play Again?</button>
+          </div>
+         
 
 </div >
 
 </body >
 
 </html >
-< !-- ### Option One: Basic Quiz(Timed Form)
 
-![Basic](Images/1-basic.jpg)
-
-                ** [Click Here to Watch the Demo](https://youtu.be/fBIj8YsA9dk)**.
-
-* You'll create a trivia form with multiple choice or true/false options (your choice).
-
-                    * The player will have a limited amount of time to finish the quiz. 
-
-  * The game ends when the time runs out.The page will reveal the number of questions that players answer correctly and incorrectly.
-
-* Don't let the player pick more than one answer per question.
-
-                    * Don't forget to include a countdown timer. -->
-                    < !-- ### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio.Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment.To receive an 'A' on any assignment, you must link to it from your portfolio. -- >
-
-< !--questions
-Q What was the first movie to bring about talks of a PG - 13 rating ?
-
-                        "Rocky"
- "Stand By Me"
- "Ghostbusters"
- "Indiana Jones and the Temple of Doom
- Q Which actor never appeared in the first four "Batman" movies ?
-
-                        Kevin Spacey
- Drew Barrymore
- Christopher Walken
- Billy Dee Williams
-
-Q: Kathryn and Sebastian were wealthy, step - siblings with a sinister plan.Annette was wholesome and pure and Sebastian fell head over heels for her.Do you remember the name of this movie ?
-                A : Cruel Intentions
-
-            Q Which film includes these 4 actresses ? Maya Rudolph, Kristen Wiig, Rose Byrne and Melissa McCarthy.
-            A Bridesmaids
-
-            Q: What 1961 movie has Audrey Hepburn note: "Personally, I think it's a bit tacky to wear diamonds before I'm 40" ?
-                A : Breakfast at Tiffany's.
-
-            Q.Which actress plays Katniss Everdeen in the Hunger Games movies ?
-                A.Jennifer Lawrence.
-
-                    Q.What is the name of the kingdom where the 2013 animated movie Frozen is set ?
-                        A.Arendelle.
-
-                            Q.Which classic thriller movie stars Roy Schieder as the police chief Martin Brody ?
-                                A.Jaws.
-
-
-                                    Q.Which Tom Hanks movie won the Academy Award for Best Picture in 1994 ?
-                                        A.Forrest Gump.
-
-                                            Q.Which 1997 science fiction movie starring Will Smith and Tommy Lee Jones tells the story of a secret agency that polices alien refugees who are living on earth disguised as humans ?
-                                                A.Men in Black. -- >
+ 
