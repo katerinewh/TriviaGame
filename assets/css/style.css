@@ -3,4 +3,10 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1600px 1600px;
-}
+ }
+ h1 {
+    font-family: 'Rancho', cursive;
+    text-align: center;
+    font-size: 80px;
+    color: ivory;
+ }
