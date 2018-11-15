@@ -126,14 +126,14 @@ $(document).ready(function () {
         //		console.log(pick.question);
         //run answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
-        for (var i = 0; i < pick.choice.length; i++) {
+        for (var i = 0; i < pick.answers.length; i++) {
             var userChoice = $("<div>");
             userChoice.addClass("answerchoice");
-            userChoice.html(pick.choice[i]);
-            //assign array to check answer
+            userChoice.html(pick.answers[i]);
+                        //assign array to check answer
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
-            
+            console.log(pick.answers);
         }
 
 
