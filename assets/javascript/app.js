@@ -103,7 +103,7 @@ $(document).ready(function () {
             unanswerCount++;
             stop();
             $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
-            hidepicture();
+           
         }	
     }
     
@@ -149,28 +149,21 @@ $(document).ready(function () {
             correctCount++;
             userGuess="";
             $("#answerblock").html("<p>Correct!</p>");
-            hidepicture();
+           
     
         } else {
             stop();
             wrongCount++;
             userGuess="";
             $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
-            hidepicture();
+          
         }
     })
     }
     
     
-    function hidepicture () {
-        $("#answerblock").append("<img src=" + pick.photo + ">");
-        newArray.push(pick);
-        options.splice(index,1);
-    
-        var hidpic = setTimeout(function() {
-            $("#answerblock").empty();
-            timer= 20;
-    
+    function score() {
+   
         //run the score screen if all questions answered
         if ((wrongCount + correctCount + unanswerCount) === qCount) {
             $("#questionblock").empty();
