@@ -14,8 +14,8 @@ $(document).ready(function () {
 
         },
         {
-            question: "Cathryn and Sebastian were wealthy, step-siblings with a sinister plan. Annette was wholesome and pure and Sebastian fell head over heels for her.Do you remember the name of this movie ?",
-            answers: ["The Secret Garden", "Dangerous Liasons", "Cruel Intentions", "The Burbs"],
+            question: "What is the name of the hobbit played by Elijah Wood in the Lord of the Rings movies?",
+            answers: ["Bilbo Baggins", "Samwise Gamgee", "Frodo Baggins", "Harry Goatleaf"],
             correctAnswer: 2,
         },
         {
@@ -64,7 +64,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 10;
+    var timer = 90;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -128,7 +128,7 @@ $(document).ready(function () {
         //	} else {
         //		console.log(pick.question);
         //run answer array and display
-        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        $("#questionblock").html("<h2>" + pick.question +"</h2>");
         for (var i = 0; i < pick.answers.length; i++) {
             var userChoice = $("<div>");
             userChoice.addClass("answerchoice");
