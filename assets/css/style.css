@@ -11,10 +11,16 @@ body{
     font-size: 80px;
     color: black;
  }
+ 
+ h3{
+  font-family: 'Rancho', cursive;
+  text-align: center;
+  font-size: 39px;
+  color:black; 
+ }
  p{
-    margin: -75px 0 10px;
-    font-family: 'Kavoon', cursive;
-    text-align: center;
+    
+        text-align: center;
     font-size: 39px;
     color:black; 
  }
@@ -81,7 +87,7 @@ body{
         body {
           background-color: #333;
         }
-      
+      }
         .wrapper {
           /* Box-model */
           width: 100%;

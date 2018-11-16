@@ -38,13 +38,13 @@ $(document).ready(function () {
         },
         {
             question: "What is the name of the kingdom where the 2013 animated movie Frozen is set",
-            answers: ["Gregor Clegane", "King Aerys", "He did it to himself", "Ser Iln Payne"],
+            answers: ["Arendelle", "Eruburg", "Arnor", "Gondor"],
             correctAnswer: 0,
 
         },
         {
             question: "Which classic thriller movie stars Roy Schieder as the police chief Martin Brody",
-            answers: ["", "", "", "Jaws"],
+            answers: ["Rosemary's Baby", "Exorcist", "Holloween", "Jaws"],
             correctAnswer: 3,
 
         },
@@ -64,7 +64,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 20;
+    var timer = 180;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -82,9 +82,7 @@ $(document).ready(function () {
         $("#start").hide();
         displayQuestion();
         runTimer();
-        for (var i = 0; i < options.length; i++) {
-            holder.push(options[i]);
-        }
+
     })
     //timer start
     function runTimer() {
@@ -102,7 +100,7 @@ $(document).ready(function () {
         if (timer === 0) {
             unanswerCount++;
             stop();
-            $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+            $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
 
         }
     }
@@ -119,6 +117,10 @@ $(document).ready(function () {
         index = Math.floor(Math.random() * options.length);
         pick = options[index];
 
+
+        console.log(`pick :  ${pick}
+        options:  ${options}
+        `)
         //	if (pick.shown) {
         //	continue to generate new index until a question is picked that hasn't been used yet
         //		displayQuestion();
@@ -130,7 +132,7 @@ $(document).ready(function () {
             var userChoice = $("<div>");
             userChoice.addClass("answerchoice");
             userChoice.html(pick.answers[i]);
-                        //assign array to check answer
+            //assign array to check answer
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
             console.log(pick.answers);
@@ -142,26 +144,37 @@ $(document).ready(function () {
         $(".answerchoice").on("click", function () {
             //grab array position from userGuess
             userGuess = parseInt($(this).attr("data-guessvalue"));
+            console.log("Correct answer: ", pick.answers[pick.correctAnswer]);
+            console.log("userGuess: ", userGuess);
 
             //correct guess or wrong guess outcomes
-            if (userGuess === pick.answer) {
+            if (userGuess === pick.correctAnswer) {
                 stop();
                 correctCount++;
                 userGuess = "";
                 $("#answerblock").html("<p>Correct!</p>");
+                options.splice(index, 1);
+                setTimeout(reset, 2000)
+
 
 
             } else {
                 stop();
                 wrongCount++;
                 userGuess = "";
-                $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+                $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
+                options.splice(index, 1);
+                setTimeout(reset, 2000)
 
             }
+
         })
     }
 
-// scoring//
+
+
+
+    // scoring//
     function score() {
 
         //run the score screen if all questions answered
@@ -183,16 +196,15 @@ $(document).ready(function () {
         }
 
     }
-// reset function//
-    $("#reset").on("click", function () {
+    // reset function//
+
+    function reset() {
+        // if timer =0/all questions answered, else/
         $("#reset").hide();
         $("#answerblock").empty();
         $("#questionblock").empty();
-        for (var i = 0; i < holder.length; i++) {
-            options.push(holder[i]);
-        }
         runTimer();
         displayQuestion();
-
-    })
+        
+    }
 })
