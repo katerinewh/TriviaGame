@@ -64,7 +64,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 90;
+    var timer = 20;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -101,7 +101,7 @@ $(document).ready(function () {
             unanswerCount++;
             stop();
             $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
-            
+
 
         }
     }
@@ -128,7 +128,7 @@ $(document).ready(function () {
         //	} else {
         //		console.log(pick.question);
         //run answer array and display
-        $("#questionblock").html("<h2>" + pick.question +"</h2>");
+        $("#questionblock").html("<h2>" + pick.question + "</h2>");
         for (var i = 0; i < pick.answers.length; i++) {
             var userChoice = $("<div>");
             userChoice.addClass("answerchoice");
@@ -155,9 +155,9 @@ $(document).ready(function () {
                 userGuess = "";
                 $("#answerblock").html("<p>Correct!</p>");
                 options.splice(index, 1);
-                setTimeout(reset, 2000)
-
-
+                if (options.length > 0) {
+                    setTimeout(reset, 2000);
+                }
 
             } else {
                 stop();
@@ -165,8 +165,9 @@ $(document).ready(function () {
                 userGuess = "";
                 $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
                 options.splice(index, 1);
-                setTimeout(reset, 2000)
-
+                if (options.length > 0) {
+                    setTimeout(reset, 2000);
+                }
             }
 
         })
