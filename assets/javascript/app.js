@@ -64,7 +64,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 180;
+    var timer = 10;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -101,6 +101,7 @@ $(document).ready(function () {
             unanswerCount++;
             stop();
             $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
+            
 
         }
     }
@@ -199,12 +200,12 @@ $(document).ready(function () {
     // reset function//
 
     function reset() {
-        // if timer =0/all questions answered, else/
+        score();
         $("#reset").hide();
         $("#answerblock").empty();
         $("#questionblock").empty();
         runTimer();
         displayQuestion();
-        
+
     }
 })
