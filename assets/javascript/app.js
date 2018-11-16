@@ -157,7 +157,9 @@ $(document).ready(function () {
                 options.splice(index, 1);
                 if (options.length > 0) {
                     setTimeout(reset, 2000);
-                }
+                }else {
+                    score()
+                };
 
             } else {
                 stop();
@@ -167,6 +169,8 @@ $(document).ready(function () {
                 options.splice(index, 1);
                 if (options.length > 0) {
                     setTimeout(reset, 2000);
+                }else{
+                    score();
                 }
             }
 
