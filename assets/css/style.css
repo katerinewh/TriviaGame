@@ -5,6 +5,10 @@ body{
     background-position: center;
     background-size: 1600px 1600px;
  }
+ img {
+  max-height: 150px;
+  width: auto;
+}
  h1 {
     font-family: 'Rancho', cursive;
     text-align: center;
