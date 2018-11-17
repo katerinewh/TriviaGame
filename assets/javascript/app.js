@@ -84,6 +84,8 @@ $(document).ready(function () {
         runTimer();
 
     })
+
+
     //timer start
     function runTimer() {
         if (!running) {
@@ -154,24 +156,13 @@ $(document).ready(function () {
                 correctCount++;
                 userGuess = "";
                 $("#answerblock").html("<p>Correct!</p>");
-                options.splice(index, 1);
-                if (options.length > 0) {
-                    setTimeout(reset, 2000);
-                }else {
-                    score()
-                };
-
+                score();
             } else {
                 stop();
                 wrongCount++;
                 userGuess = "";
                 $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
-                options.splice(index, 1);
-                if (options.length > 0) {
-                    setTimeout(reset, 2000);
-                }else{
-                    score();
-                }
+                score();
             }
 
         })
@@ -182,35 +173,45 @@ $(document).ready(function () {
 
     // scoring//
     function score() {
+        $("#answerblock").append("<img src=" + pick.photo + ">");
+        newArray.push();
+        options.splice(index, 1);
 
-        //run the score screen if all questions answered
-        if ((wrongCount + correctCount + unanswerCount) === qCount) {
+        var hidpic = setTimeout(function () {
+            $("#answerblock").empty();
+            timer = 20;
+            //run the score screen if all questions answered
+            if ((wrongCount + correctCount + unanswerCount) === qCount) {
+                $("#questionblock").empty();
+                $("#questionblock").html("<h3>Game Over!  Final Score: </h3>");
+                $("#answerblock").append("<h4> Correct: " + correctCount + "</h4>");
+                $("#answerblock").append("<h4> Incorrect: " + wrongCount + "</h4>");
+                $("#answerblock").append("<h4> Unanswered: " + unanswerCount + "</h4>");
+                $("#reset").show();
+                correctCount = 0;
+                wrongCount = 0;
+                unanswerCount = 0;
+
+            } else {
+                runTimer();
+                displayQuestion();
+            }
+
+        }, 3000);
+
+        // reset function//
+
+        function reset() {
+            score();
+            $("#reset").hide();
+            $("#answerblock").empty();
             $("#questionblock").empty();
-            $("#questionblock").html("<h3>Game Over!  Final Score: </h3>");
-            $("#answerblock").append("<h4> Correct: " + correctCount + "</h4>");
-            $("#answerblock").append("<h4> Incorrect: " + wrongCount + "</h4>");
-            $("#answerblock").append("<h4> Unanswered: " + unanswerCount + "</h4>");
-            $("#reset").show();
-            correctCount = 0;
-            wrongCount = 0;
-            unanswerCount = 0;
-
-        } else {
             runTimer();
             displayQuestion();
 
         }
-
-    }
-    // reset function//
-
-    function reset() {
-        score();
-        $("#reset").hide();
-        $("#answerblock").empty();
-        $("#questionblock").empty();
-        runTimer();
-        displayQuestion();
-
     }
 })
+    // function resetGame() {
+    //         }
+
