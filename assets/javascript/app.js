@@ -132,12 +132,12 @@ $(document).ready(function () {
         options:  ${options}
         `)
         //	if (pick.shown) {
-        //	continue to generate new index until a question is picked that hasn't been used yet
-        //		displayQuestion();
+        //	generate new index until a question is picked that hasn't been used yet
+        		// displayQuestion();
         //	} else {
         //		console.log(pick.question);
         //run answer array and display
-        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        $("#questionblock").html("<h2>" + pick.question+ "</h2>");
         for (var i = 0; i < pick.answers.length; i++) {
             var userChoice = $("<div>");
             userChoice.addClass("answerchoice");
