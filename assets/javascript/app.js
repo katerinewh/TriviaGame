@@ -89,6 +89,9 @@ $(document).ready(function () {
         $("#start").hide();
         displayQuestion();
         runTimer();
+        for(var i = 0; i < options.length; i++) {
+            holder.push(options[i]);
+        }
 
     })
 
