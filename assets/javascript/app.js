@@ -113,6 +113,8 @@ $(document).ready(function () {
             unanswerCount++;
             stop();
             $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
+            score();
+
 
 
         }
@@ -172,7 +174,7 @@ $(document).ready(function () {
                 wrongCount++;
                 userGuess = "";
                 $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.answers[pick.correctAnswer] + "</p>");
-                score();
+               score()
             }
 
         })
@@ -189,7 +191,7 @@ $(document).ready(function () {
 
         var hidpic = setTimeout(function () {
             $("#answerblock").empty();
-            timer = 20;
+            timer = 10;
             //run the score screen if all questions answered
             if ((wrongCount + correctCount + unanswerCount) === qCount) {
                 $("#questionblock").empty();
